@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>TOIBAO-Project</title>
+
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="images/laptop.ico">
+    </div>
+    <div class="menu">
+        <li><a href="">BOY</a></li>
+            <ul class="sub-menu">
+                <li><a href="">New</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Shirt</a>
+                    <ul>
+                        <li><a href="">Áo thun nam</a></li>
+                        <li><a href="">Áo sơ mi nam</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Pants</a>
+                    <ul>
+                        <li><a href="">Jean</a></li>
+                        <li><a href="">Short</a></li>
+                    </ul>
+                </li>
+            </ul>
+        <li><a href="">GIRL</a></li>
+        <li><a href="">CHILDEN</a></li>
+        <li><a href="">SALE</a></li>
+        <li><a href="">LAPTOP</a></a></li>
+        <li><a href="">BST</a></li>
+        <li><a href="">INFO</a></li>
+    </div>
+    <div class="others">
+        <li><input placeholder="find" type="text"> <i class="fas fa-search"></i></li>
+        <li> <a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=100008311301486"> Facebook </a></li>
+        <li> <a class="fa fa-youtube" href="https://www.youtube.com/watch?v=pqGwsXEaWmY&ab_channel=ThanhT%C3%A0iOfficial">  Youtube </a></li>
+        <li> <a class="fa fa-user" href="" > Cá nhân </a></li>
+    </div>
+
+</header>
+<section id="Slider">
+<div class="aspect-ratio-169">
+    <img src="images/slide1.jpg">
+    <img src="images/slide2.jpg">
+    <img src="images/slide3.jpg">   
+    <img src="images/slide4.jpg">
+    <img src="images/slide5.jpg">
+</div>
+<div class="dot-contaner">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+</section>
+</body>
+<script>
+const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+const imgContainer = document.querySelector(".aspect-ratio-169")
+const dotItem = document.querySelectorAll(".dot")
+let imgNuber = imgPosition.length
+let index = 0
+// console.log(imPosition)
+imgPosition.forEach(function(images, index){
+    Image.style.left = index*100 + "%"
+    dotItem[index].addEventListener("click",function(){
+    Slider (index)
+    })
+})
+function imgSlide(){
+    index++;
+    console.log(index)
+    if (index>=imgNuber){
+        index = 0
+    }
+    slider(index)
+}
+function slider (index){
+    imgContainer.style.left= "-" +index*100+ "%"
+}
+setInterval(imgSlide,5000)
+</script>
+</html>
